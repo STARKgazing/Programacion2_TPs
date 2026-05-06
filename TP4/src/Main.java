@@ -29,7 +29,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 🔹 1.1 NumberFormatException
+        // 1.1 NumberFormatException
         try {
             int num = Integer.parseInt("abc");
         } catch (NumberFormatException e) {
@@ -37,10 +37,10 @@ public class Main {
             System.out.println("Tipo: " + e.getClass().getName());
         }
 
-        // 🔹 1.2 finally
+        // 1.2 finally
         divisionConFinally();
 
-        // 🔹 1.3 multi-catch
+        // 1.3 multi-catch
         try {
             String input = "0"; // prueba también con "abc"
             int num = Integer.parseInt(input);
@@ -49,14 +49,14 @@ public class Main {
             System.out.println("Error de cálculo o conversión");
         }
 
-        // 🔹 2.2 captura específica
+        // 2.2 captura específica
         try {
             registrarUsuario("", -5);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // 🔹 3.1 excepción checked
+        // 3.1 excepción checked
         CuentaBancaria cuenta = new CuentaBancaria(100);
 
         try {
@@ -65,14 +65,14 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // 🔹 3.2 excepción unchecked
+        // 3.2 excepción unchecked
         try {
             Producto p = new Producto("Laptop", -10);
         } catch (ProductoInvalidoException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // 🔹 4.1 try-with-resources
+        // 4.1 try-with-resources
         try (BufferedReader br = new BufferedReader(new FileReader("personas.txt"))) {
 
             String linea;
