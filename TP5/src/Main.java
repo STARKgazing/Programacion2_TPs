@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 🔹 1.1 Thread
+        // 1.1 Thread
         TareaHilo h1 = new TareaHilo("Hilo 1");
         TareaHilo h2 = new TareaHilo("Hilo 2");
 
@@ -12,7 +12,7 @@ public class Main {
         h1.start();
         h2.start();
 
-        // 🔹 1.2 Runnable
+        // 1.2 Runnable
         TareaRunnable tarea = new TareaRunnable("Runnable");
 
         Thread t1 = new Thread(tarea);
@@ -21,7 +21,7 @@ public class Main {
         t1.start();
         t2.start();
 
-        // 🔹 2.1 Race condition
+        // 2.1 Race condition
         Contador contador = new Contador();
 
         Thread c1 = new Thread(() -> {
@@ -48,7 +48,7 @@ public class Main {
 
         System.out.println("Valor sin sincronización: " + contador.getValor());
 
-        // 🔹 3.1 Sincronización método
+        // 3.1 Sincronización método
         Contador contador2 = new Contador();
 
         Thread s1 = new Thread(() -> {
@@ -75,7 +75,7 @@ public class Main {
 
         System.out.println("Valor sincronizado (método): " + contador2.getValor());
 
-        // 🔹 3.2 Bloque sincronizado
+        // 3.2 Bloque sincronizado
         Contador contador3 = new Contador();
 
         Thread b1 = new Thread(() -> {
@@ -102,7 +102,7 @@ public class Main {
 
         System.out.println("Valor sincronizado (bloque): " + contador3.getValor());
 
-        // 🔹 4.2 join + interrupt
+        // 4.2 join + interrupt
         Thread largo = new Thread(() -> {
             try {
                 System.out.println("Tarea larga iniciada...");
