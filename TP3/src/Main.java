@@ -13,27 +13,27 @@ public class Main {
             new Producto("Mesa", 200, "Hogar")
         );
 
-        // 1. Filtrar productos caros (>100)
+        // Filtrar productos caros (>100)
         System.out.println("Productos caros:");
         productos.stream()
                 .filter(p -> p.getPrecio() > 100)
                 .forEach(System.out::println);
 
-        // 2. Mapear nombres
+        // Mapear nombres
         System.out.println("\nNombres de productos:");
         List<String> nombres = productos.stream()
                 .map(Producto::getNombre)
                 .collect(Collectors.toList());
         nombres.forEach(System.out::println);
 
-        // 3. Suma total (reduce)
+        // Suma total (reduce)
         double total = productos.stream()
                 .map(Producto::getPrecio)
                 .reduce(0.0, Double::sum);
 
         System.out.println("\nTotal precios: " + total);
 
-        // 4. Buscar un producto (Optional)
+        // Buscar un producto (Optional)
         Optional<Producto> encontrado = productos.stream()
                 .filter(p -> p.getNombre().equalsIgnoreCase("Mouse"))
                 .findFirst();
@@ -43,7 +43,7 @@ public class Main {
                 () -> System.out.println("No encontrado")
         );
 
-        // 5. Agrupar por categoría
+        // Agrupar por categoría
         Map<String, List<Producto>> agrupados = productos.stream()
                 .collect(Collectors.groupingBy(Producto::getCategoria));
 
@@ -53,7 +53,7 @@ public class Main {
             lista.forEach(System.out::println);
         });
 
-        // 6. Ordenar por precio
+        // Ordenar por precio
         System.out.println("\nOrdenados por precio:");
         productos.stream()
                 .sorted(Comparator.comparingDouble(Producto::getPrecio))
